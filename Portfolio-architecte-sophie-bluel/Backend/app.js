@@ -25,3 +25,61 @@ app.use('/api/categories', categoriesRoutes);
 app.use('/api/works', worksRoutes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 module.exports = app;
+
+
+
+
+
+
+
+
+
+
+
+
+function filtrerCategories(key) {
+  // en fonction du paramètre key, filtre les travaux ciblés et change la couleur du bouton
+  switch (key) {
+    case "all":
+      resetBtn();
+      btnFiltersAll.style.color = "#ffffff";
+      btnFiltersAll.style.background = "#1D6154";
+      document.querySelector(".gallery").innerHTML = "";
+      dataCatego(loadedData);
+      break;
+    case "Objets":
+      // TODO
+      resetBtn();
+      btnFiltersObject.style.color = "#ffffff";
+      btnFiltersObject.style.background = "#1D6154";
+      document.querySelector(".gallery").innerHTML = "";
+      dataCatego(
+        loadedData.filter((work) => work.category.name.includes("Objets"))
+      );
+      break;
+    case "Appartements":
+      // TODO
+      resetBtn();
+      btnFiltersAppartment.style.color = "#ffffff";
+      btnFiltersAppartment.style.background = "#1D6154";
+      document.querySelector(".gallery").innerHTML = "";
+      dataCatego(
+        loadedData.filter((work) => work.category.name.includes("Appartements"))
+      );
+      break;
+    case "Hotels & restaurants":
+      // TODO
+      resetBtn();
+      btnFiltersHostel.style.color = "#ffffff";
+      btnFiltersHostel.style.background = "#1D6154";
+      document.querySelector(".gallery").innerHTML = "";
+      dataCatego(
+        loadedData.filter((work) =>
+          work.category.name.includes("Hotels & restaurants")
+        )
+      );
+      break;
+    default:
+      break;
+  }
+};

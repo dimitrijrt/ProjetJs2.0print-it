@@ -94,7 +94,16 @@ h1 > span {
     padding-top: 37px;
 }
 
+span {
+	
+	
+	padding-bottom: 7px;
+	margin:auto;
+}
 
+header a {
+	text-decoration: none;
+}
 
 
 input {
@@ -103,6 +112,9 @@ input {
     margin-bottom: 30px;
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
     border: none;
+	margin: auto;
+	margin-bottom: 37px;
+
 }
 
 h2{

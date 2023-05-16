@@ -1,13 +1,12 @@
-const mail = document.getElementById("email").value;
-const passe = document.getElementById("password").value;
 
 
-const infosLogin = document.querySelector(".login");
-
-const connect = document.querySelector(".connect");
 
 
-connect.addEventListener("click",  () => {
+
+const boutonConnect = document.querySelector(".connect");
+
+
+boutonConnect.addEventListener("click",  () => {
 
 	console.log("test");
  
@@ -16,9 +15,13 @@ connect.addEventListener("click",  () => {
 
 
 
+
+const mail = document.getElementById("email").value;
+const pass = document.getElementById("password").value;
+
   let user = {
     email:mail,
-    mdp: passe,
+    password: pass,
   };
   
   // POST REQUEST

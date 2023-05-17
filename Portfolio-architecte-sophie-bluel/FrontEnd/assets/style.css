@@ -59,9 +59,8 @@ body {
 	font-size: 14px;
 }
 header {
-	display: flex;
-	justify-content: space-between;
-	margin: 50px 0
+	
+	margin: 0 0
 }
 section {
 	margin: 50px 0
@@ -208,4 +207,192 @@ button {
 	border-radius: 60px;
 	border: 1px solid #1D6154;
 	color: #1D6154;
+}
+
+.publier {
+	background-color: white;
+	color: black;
+	border:black;
+	padding: 11px 21px;
+	border-radius: 60px;
+	justify-content: center;
+	margin: 10px 0px;
+}
+
+.head {
+	
+	background-color: black;
+	margin: auto;
+	display: none;
+	
+}
+
+.edit {
+	color: white;
+	
+	
+	
+}
+
+.sophie {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 0;
+	
+}
+
+.change {
+	display: flex;
+	justify-content: center;
+	gap:21px;
+	align-items: center;
+}
+
+.projets {
+	display: flex;
+	justify-content: center;
+	gap:31px;
+}
+
+.modifier {
+	padding-top: 7px;
+	cursor: pointer;
+	
+}
+
+
+.modaluser {
+	z-index:1;
+	position: fixed;
+
+}
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+	background-color: #fefefe;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+  }
+
+
+
+.delete {
+	background-color: white;
+	border: none;
+	color: red;
+}
+
+
+.modaluser {
+	z-index:1;
+	background-color: #FFFFFF;
+	position: absolute;
+	width: 630px;
+	height: 731px;
+	left: 405px;
+	top: 660px;
+	border: 1px solid black;
+	display: none;
+	
+
+}
+
+.buttonedit {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	
+}
+
+.add {
+	width:50%;
+	margin: auto;
+}
+
+
+.modal_gallery {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-column-gap: 8px;
+	grid-row-gap: 6px;
+    overflow: auto;
+}
+.modal_gallery figure {
+    width: 62px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    grid-gap: 2px;
+}
+.modal_gallery img {
+    width: 62px;
+}
+.modal_gallery figcaption {
+    width: 100%;
+    font-family: "Work Sans";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: start;
+}
+
+.modaladd {
+	display: flex;
+	flex-direction: column;
+	width:50%;
+	margin:auto;
+	z-index:1;
+	background-color: rgba(0, 0, 0, 0.1);;
+	display: none;
+}
+.valider {
+	background-color: #A7A7A7;
+	color: white;
+	border: none;
+	margin: 32px auto;
+	width: 55%;
+}
+
+.inputadd {
+	display: flex;
+	flex-direction: column;
+	width:65%;
+	margin: auto;
+}
+
+.addimg {
+	background: #CBD6DC;
+	color: #306685;
 }

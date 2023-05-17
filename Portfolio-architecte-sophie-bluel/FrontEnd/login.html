@@ -25,14 +25,18 @@
 
 <main>
     <section class="login">
-            <h1>Log in</h1>
-            <span >E-mail</span>
-            <input id="email"></input>
-            <span>Mot de passe</span>
-            <input id="password"></input>
-            <button class="connect">Se connecter</button>
+        <h1>Log in</h1>
+        <form  method="post">
+            <label for="email">E-mail</label>
+            <input id="email"/>
+            <label for="password">Mot de passe</label>
+            <input id="password"/>
+            <button type="submit" class="connect">Se connecter</button>
             <a>Mot de passe oublié</a>
-       
+        </form>
     </section>
     
 </main>
+<script src="login.js"></script>
+</body>
+</html>

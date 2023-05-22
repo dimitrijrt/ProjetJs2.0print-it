@@ -82,13 +82,16 @@ h1 > span {
 ;
 }
 
-.login {
+form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: auto;
+    
 }
 
+form label {
+	padding-bottom: 6px;
+    margin: auto;
+}
 .login a {
     margin: auto;
     padding-top: 37px;

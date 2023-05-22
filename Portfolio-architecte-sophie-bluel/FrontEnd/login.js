@@ -2,6 +2,7 @@ const form = document.querySelector("form");
 
 
 form.addEventListener("submit", async (e) => {
+    e.preventDefault();
     let user = {
         email: document.getElementById("email").value,
         password: document.getElementById("password").value

@@ -71,22 +71,28 @@ addEventListener('DOMContentLoaded', async (e) => {
 
 
 // Get the modal
-var modal = document.getElementById("myModal");
+const modal = document.getElementById("modaleuser");
+const modalback = document.querySelector(".modalback2");
 
 // Get the button that opens the modal
-var btn = document.getElementById("mybtnmodal");
+const btn = document.getElementById("btnmodal");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+const span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";
+  modalback.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
+  modalback.style.display = "none";
+  modal2.style.display = "none";
+  modal3.style.display = "none";
+
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -95,6 +101,28 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// visualiser la modal edit onclick sur modifier
+// Get the modal
+const modal2 = document.querySelector(".modaladd");
+const modal3 = document.querySelector(".modalback");
+
+// Get the button that opens the modal
+const btn2 = document.getElementById("btnadd");
+
+btn2.onclick = function() {
+    modal.style.display = "none";
+    modal2.style.display = "block";
+    modal3.style.display = "block";
+}
+
+const btnback = document.querySelector(".fa-arrow-left")
+
+btnback.onclick = function() {
+  modal.style.display = "block";
+    modal2.style.display = "none";
+}
+
 
 
 
@@ -125,28 +153,6 @@ function modalWorks(data) {
     }
 }
 
-// visualiser la modal edit onclick sur modifier
-// Get the modal
-var modal = document.getElementById("modaleuser");
-
-// Get the button that opens the modal
-var btn = document.getElementById("btnmodal");
-
-btn.onclick = function() {
-    modal.style.display = "block";
-  }
-
-
-// afficher modal d'ajout photo après modal edit
-
-var modalAdd = document.getElementById("modaladd");
-var btnajout = document.getElementById("btnadd");
-
-
-btn.onclick = function() {
-    modalAdd.style.display = "block";
-  }
-
   // recup token de l'admin
 
   const token = window.localStorage.getItem("accessToken");
@@ -159,11 +165,50 @@ btn.onclick = function() {
 
 // si connecté apparition barre admin et logout
 
+
+
+const log = document.querySelector('.login');
+
   if (token !== null) {
     log.innerHTML = " ";
     log.innerHTML = "logout";
     log.addEventListener("click", logOut);
     const adminBar = document.querySelector(".head");
     adminBar.style.display = "block";
+    const edit = document.querySelector(".modifier");
+    edit.style.display = "block";
+
 
   }
+
+
+  // fonction ajout
+
+  async function addWork() {
+    // e.preventDefault();
+    
+    // Récupération des saisies pour la création du nouvel élément
+    const inputPicture = document.getElementById("image").files[0];
+    // console.log(inputPicture);
+    const inputTitle = document.getElementById("title").value;
+    // console.log(inputTitle);
+    const inputCategorie = document.getElementById("categories").value;
+    // console.log(inputCategorie);
+  
+    // Construction du formData à envoyer
+    const formData = new FormData();
+    formData.append("image", inputPicture);
+    formData.append("title", inputTitle);
+    formData.append("categories", inputCategorie);
+  
+    // Appel de la fonction fetch avec toutes les informations nécessaires
+    let response = await fetch("http://localhost:5678/api/works", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+      body: formData,
+    });
+
+  }
+

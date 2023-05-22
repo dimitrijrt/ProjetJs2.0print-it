@@ -255,11 +255,16 @@ button {
 }
 
 .modifier {
-	padding-top: 7px;
+	padding-top: 8px;
 	cursor: pointer;
+	display: none;
+	
 	
 }
 
+.modifier i {
+	padding-right: 11px;
+}
 
 .modaluser {
 	z-index:1;
@@ -315,18 +320,77 @@ button {
 
 
 .modaluser {
+	flex-direction: column;
+	width:20%;
+	margin: auto;
 	z-index:1;
-	background-color: #FFFFFF;
-	position: absolute;
-	width: 630px;
-	height: 731px;
-	left: 405px;
-	top: 660px;
-	border: 1px solid black;
+	background-color:white;
 	display: none;
+	border: 1px solid black;
+	padding: 60px 100px;
+	border-radius: 10px;
+	margin-top:30%;
+	
+	
+	
+	
 	
 
 }
+
+
+.modalback2 {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+	display: none;
+	
+}
+
+.modaladd {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+	display: none;
+	
+}
+
+
+
+
+.modalback {
+	flex-direction: column;
+	width:50%;
+	margin: auto;
+	z-index:1;
+	background-color:white;
+	display: none;
+	border: 1px solid black;
+	padding: 60px 105px;
+	border-radius: 10px;
+	margin-top:30%;
+
+	
+	
+}
+
+.modalback h2 {
+	padding-top: 15px;
+	padding-bottom: 36px;
+	justify-content: center;
+	color:black;
+	margin: auto;
+}
+
+
+
+
 
 .buttonedit {
 	display: flex;
@@ -368,14 +432,22 @@ button {
     text-align: start;
 }
 
-.modaladd {
-	display: flex;
-	flex-direction: column;
-	width:50%;
-	margin:auto;
-	z-index:1;
-	background-color: rgba(0, 0, 0, 0.1);;
-	display: none;
+
+.imgicon {
+	width: 58px;
+	height: 46px;
+}
+
+.ajoutphoto {
+	background: #CBD6DC;
+	border-radius: 50px;
+	height: 36px;
+	width: 55%;
+	margin: auto;
+}
+
+.ajoutphoto span {
+	margin: auto;
 }
 .valider {
 	background-color: #A7A7A7;
@@ -392,7 +464,49 @@ button {
 	margin: auto;
 }
 
-.addimg {
+.file_upload {
 	background: #CBD6DC;
 	color: #306685;
+	visibility: hidden;
 }
+
+.addphoto {
+	background-color: #306685;
+	opacity: 50%;
+	display: flex;
+	flex-direction: column;
+	height: 169px;
+	margin-bottom: 30px;
+	
+}
+
+.addphoto button {
+	width:60%;
+	margin: auto;
+}
+
+.addphoto i {
+	width: 46px;
+}
+
+.addphoto i,span {
+	margin:auto;
+}
+
+.hr {
+	border: 1px solid lightgray;
+	width: 100%;
+}
+
+.cate {
+	margin-bottom: 47px;
+	margin-top: 8px;
+}
+
+.inputadd input {
+	margin-bottom: 20px;
+	margin-top: 8px;
+	height: 31px;
+	
+}
+	

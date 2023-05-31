@@ -66,11 +66,7 @@ addEventListener('DOMContentLoaded', async (e) => {
     await dataApi();
     await fetchCategories();
     await filtrerCategories();
-    
-    
-    
-   
-    
+     
 })
 
 
@@ -97,8 +93,6 @@ span.onclick = function() {
  
 
 }
-
-
 
 
 
@@ -136,9 +130,6 @@ close2.onclick = function() {
 }
 
 
-
-
-
 // affiche works dans la modal
 function modalWorks(data) {
     const modalGall = document.querySelector(".modal_gallery");
@@ -167,37 +158,30 @@ function modalWorks(data) {
 
               const id = data[i].id;
 
-
-
               // FONCTION delete IMG
-              async function deleteElement(e) {
+ async function deleteElement(e) {
            
-                let id = deleteIcon.value;
-          
-              let response = await fetch("http://localhost:5678/api/works" + "/" + id, {
-                      method: "DELETE",
-                      headers: {
-                        "Content-Type": "application/Json",
-                        Authorization: "Bearer " + localStorage.getItem("accessToken"),
-                      },
-                    });
-                 
-                    
-                    if (response.status === 200 || 204) {
-                      udateWorks();
-                    } else if (response.status === 401 || 400) {
-                      console.log("erreur");
-                    }
-                  }
+  let id = deleteIcon.value;
 
-                  deleteIcon.addEventListener("click", deleteElement);
-
+let response = await fetch("http://localhost:5678/api/works" + "/" + id, {
+        method: "DELETE",
+        headers: {'Authorization': `Bearer ${window.localStorage.getItem('accessToken')}`}
+        
+      });
+   
+      
+      if (response.status === 200 || 204) {
+        udateWorks();
+      } else if (response.status === 401 || 400) {
+        console.log("erreur");
+      }
     }
-    
 
-
-
+    deleteIcon.addEventListener("click", deleteElement);
+            
+    }
 }
+
 
   // recup token de l'admin
 
@@ -220,16 +204,12 @@ const log = document.querySelector('.login');
     log.innerHTML = "logout";
     log.addEventListener("click", logOut);
     const adminBar = document.querySelector(".head");
-    adminBar.style.display = "block";
+    adminBar.style.display = "flex";
     const edit = document.querySelector(".modifier");
     edit.style.display = "block";
 
 
   }
-
-
-
-  
 
 
 
@@ -273,9 +253,6 @@ function loadFile(e) {
 
 
 
-
-
-
 // Ajouter new img à la gallerie
 
 const validerBtn = document.querySelector(".valider");
@@ -294,22 +271,22 @@ async function addWork() {
   const formData = new FormData();
   formData.append("image", inputPicture);
   formData.append("title", inputTitle);
-  formData.append("categories", inputCategorie);
+  formData.append("category", inputCategorie);
 
   // POST request api
 
-  let response = await fetch("http://localhost:5678/api/works", {
+  let response = await fetch("http://localhost:5678/api/works" , {
     method: "POST",
-    headers: {
-      Authorization: "Bearer " + localStorage.getItem("accesToken"),
-    },
+    headers: 
+       {'Authorization': `Bearer ${window.localStorage.getItem('accessToken')}`},
+    
     body: formData,
   });
+
  
 
   
   if (response.status === 200 || 204) {
-    alert('image ajoutée');
     udateWorks();
     modal3.style.display = "none";
     modal2.style.display = "none";
@@ -325,7 +302,8 @@ async function addWork() {
 };
 
 
-validerBtn.addEventListener("click", ()=> {
+validerBtn.addEventListener("click", (e)=> {
+  e.preventDefault;
   addWork();
   console.log("TEST");
   

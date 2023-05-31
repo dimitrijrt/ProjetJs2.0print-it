@@ -215,8 +215,8 @@ button {
 	border:black;
 	padding: 11px 21px;
 	border-radius: 60px;
-	justify-content: center;
 	margin: 10px 0px;
+	
 }
 
 .head {
@@ -224,14 +224,23 @@ button {
 	background-color: black;
 	margin: auto;
 	display: none;
+	justify-content: center;
+	
 	
 }
 
 .edit {
 	color: white;
+	margin: auto;
+	margin-right: 21px;
 	
 	
 	
+}
+
+
+.edit i {
+	margin-right: 11px;
 }
 
 .sophie {
@@ -242,10 +251,7 @@ button {
 }
 
 .change {
-	display: flex;
-	justify-content: center;
-	gap:21px;
-	align-items: center;
+	
 }
 
 .projets {
@@ -293,10 +299,14 @@ button {
   
   /* The Close Button */
   .close {
-	color: #aaa;
-	float: right;
-	font-size: 28px;
+	color: black;
+	justify-content: end;
+	font-size: 12px;
 	font-weight: bold;
+	margin-top: 0;
+	display: flex;
+	margin-top:-20px;
+	margin-right: -20px;
   }
   
   .close:hover,
@@ -322,18 +332,24 @@ button {
     max-height: calc(100vh-20px);
     padding: 50px;
     overflow: auto;
-	
-	
-	
-	
+	border-radius: 10px;
 	
 
+}
+
+.modaluser h2 {
+	color: black;
+	font-family: Work Sans;
+	font-weight: 400;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 46px;
 }
 
 
 .modalback2 {
 	position: fixed;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: 1;
@@ -343,11 +359,12 @@ button {
     height: 100%;
     background-color: rgba(0,0,0,0.4);
 	
+	
 }
 
 .modaladd {
 	position: fixed;
-   display: flex;
+   display: none;
    justify-content: center;
    align-items: center;
     z-index: 1;
@@ -368,6 +385,7 @@ button {
     max-height: calc(100vh-20px);
     padding: 50px;
     overflow: auto;
+	border-radius: 10px;
 	
 	
 	
@@ -393,6 +411,11 @@ button {
 }
 
 .add {
+	width:50%;
+	margin: auto;
+}
+
+.delete {
 	width:50%;
 	margin: auto;
 }
@@ -431,12 +454,25 @@ button {
 	height: 46px;
 }
 
+.inputitle {
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	border: none;
+	height: 51px;
+	
+}
+.categories {
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	border: none;
+	height: 51px;
+}
+
 .ajoutphoto {
 	background: #CBD6DC;
 	border-radius: 50px;
-	height: 36px;
+	height: 30px;
 	width: 55%;
 	margin: auto;
+	color:#306685;
 }
 
 .ajoutphoto span {
@@ -464,7 +500,7 @@ button {
 }
 
 .addphoto {
-	background-color: #306685;
+	background-color: #E8F1F7;
 	opacity: 50%;
 	display: flex;
 	flex-direction: column;
@@ -489,6 +525,12 @@ button {
 .hr {
 	border: 1px solid lightgray;
 	width: 100%;
+}
+
+.buttonedit hr {
+	width: 80%;
+	margin-bottom: 35px;
+	margin-top: 35px;
 }
 
 .cate {
@@ -534,7 +576,13 @@ button {
 
 .ajoutphoto {
 	text-align: center;
-	padding-top: 20px;
+	padding-top: 13px;
+	margin-top: 21px;
 	
+	
+}
+
+ svg {
+	margin-top: 25px;
 	
 }

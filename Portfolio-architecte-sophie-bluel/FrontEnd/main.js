@@ -195,21 +195,21 @@ let response = await fetch("http://localhost:5678/api/works" + "/" + id, {
 
 // si connecté apparition barre admin et logout
 
-
-
 const log = document.querySelector('.login');
 
-  if (token !== null) {
-    log.innerHTML = " ";
-    log.innerHTML = "logout";
-    log.addEventListener("click", logOut);
-    const adminBar = document.querySelector(".head");
-    adminBar.style.display = "flex";
-    const edit = document.querySelector(".modifier");
-    edit.style.display = "block";
+if (token !== null) {
+  log.innerHTML = " ";
+  log.innerHTML = "logout";
+  log.addEventListener("click", logOut);
+  const adminBar = document.querySelector(".head");
+  adminBar.style.display = "flex";
+  const edit = document.querySelector(".modifier");
+  edit.style.display = "block";
 
 
-  }
+}
+
+
 
 
 
@@ -310,16 +310,10 @@ validerBtn.addEventListener("click", (e)=> {
 
 });
 
-function clearGallery() {
-  const modalGall = document.querySelector(".modal_gallery");
-  const gallery = document.querySelector(".gallery");
-  modalGall.innerHTML = "";
-  gallery.innerHTML = "";
-};
+
 
 
 function udateWorks() {
-  clearGallery();
   dataApi();
 };
 

@@ -90,7 +90,7 @@ form {
 
 form label {
 	padding-bottom: 6px;
-    margin: auto;
+    margin-left: 350px;
 }
 .login a {
     margin: auto;
@@ -102,6 +102,12 @@ span {
 	
 	padding-bottom: 7px;
 	margin:auto;
+}
+
+.errormsg {
+	display: none;
+	padding-top: 12px;
+	color: red;
 }
 
 header a {
@@ -251,3 +257,4 @@ button {
     width: 20%;
     margin: auto;
 }
+

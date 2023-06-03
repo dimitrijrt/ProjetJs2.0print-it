@@ -1,5 +1,6 @@
 const form = document.querySelector("form");
-
+const errormessage = document.querySelector(".errormsg");
+const log = document.querySelector('.login');
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -18,6 +19,20 @@ form.addEventListener("submit", async (e) => {
     });
 
     let result = await response.json();
-    window.localStorage.setItem('accessToken', result.token);
-    window.location.href = './index.html';
+    
+    
+    if (response.status === 200) {
+        window.localStorage.setItem('accessToken', result.token);
+        window.location.href = './index.html';
+        
+      } else if (response.status === 401 || 404) {
+        errormessage.style.display = "block";
+      };
+  
+
+
+   
+    
 });
+
+

@@ -48,6 +48,8 @@ function showWorks(data) {
 };
 
 
+
+// Fonction pour filtrer les travaux selons leurs catégories
 function filtrerCategories() {
     dataWorksFiltered = dataWorks;
     const buttonFilters = document.querySelectorAll('.bouttons button');
@@ -93,6 +95,27 @@ span.onclick = function() {
  
 
 }
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modalback ) {
+    modal.style.display = "none";
+    modalback.style.display = "none";
+    modal3.style.display = "none";
+    modal2.style.display="none"
+   
+  }
+
+  if (event.target == modal2 ) {
+    modal3.style.display = "none";
+    modal2.style.display="none";
+    modalback.style.display = "none";
+   
+  }
+}
+
+
+
 
 
 
@@ -159,28 +182,28 @@ function modalWorks(data) {
               const id = data[i].id;
 
               // FONCTION delete IMG
- async function deleteElement(e) {
-           
-  let id = deleteIcon.value;
+              async function deleteElement(e) {
+                        
+                let id = deleteIcon.value;
 
-let response = await fetch("http://localhost:5678/api/works" + "/" + id, {
-        method: "DELETE",
-        headers: {'Authorization': `Bearer ${window.localStorage.getItem('accessToken')}`}
-        
-      });
+              let response = await fetch("http://localhost:5678/api/works" + "/" + id, {
+                      method: "DELETE",
+                      headers: {'Authorization': `Bearer ${window.localStorage.getItem('accessToken')}`}
+                      
+                    });
    
       
-      if (response.status === 200 || 204) {
-        udateWorks();
-      } else if (response.status === 401 || 400) {
-        console.log("erreur");
-      }
-    }
+              if (response.status === 200 || 204) {
+                udateWorks();
+              } else if (response.status === 401 || 400) {
+                console.log("erreur");
+              }
+            }
 
-    deleteIcon.addEventListener("click", deleteElement);
-            
-    }
-}
+            deleteIcon.addEventListener("click", deleteElement);
+                    
+            }
+        }
 
 
   // recup token de l'admin
@@ -245,10 +268,10 @@ function loadFile(e) {
   label.style.opacity = "0";
   viewImg.style.position = "absolute";
   viewImg.style.objectFit = "contain";
-  viewImg.style.opacity = "1";
-  viewImg.style.padding = "0";
-  viewImg.style.height = "140px";
-  viewImg.style.width = "390px";
+  viewImg.style.height = "170px";
+  viewImg.style.margin = "auto";
+  viewImg.style.margin ="0px 44px";
+  viewImg.style.opacity =  "1"
 };
 
 

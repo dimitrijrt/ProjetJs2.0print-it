@@ -95,6 +95,7 @@ form label {
 .login a {
     margin: auto;
     padding-top: 37px;
+	text-decoration: underline;
 }
 
 span {

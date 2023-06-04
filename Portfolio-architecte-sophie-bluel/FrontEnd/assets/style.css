@@ -145,6 +145,7 @@ li:hover {
 
 .gallery img {
 	width: 100%;
+	height: 489px;
 
 }
 #contact {
@@ -445,6 +446,7 @@ button {
 }
 .modal_gallery img {
     width: 62px;
+	height: 99px;
 }
 .modal_gallery figcaption {
     width: 100%;
